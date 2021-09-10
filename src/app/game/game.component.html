@@ -1,25 +1,24 @@
 <div>
     <div>
         <span *ngFor="let t of tiles">
-            {{ t.index == playerX ? "🤓" : t.emoji }}
+            {{ t.index == playerX ? playerEmoji : t.emoji }}
         </span>
     </div>
 
     <p>
-        <button (click)="left()" [disabled]="gameOver">Left</button>
-        <button (click)="jump()" [disabled]="gameOver">Jump</button>
-        <button (click)="right()" [disabled]="gameOver">Right</button>
+        <button (click)="left()" [disabled]="gameWon || gameLost">Left</button>
+        <button (click)="jump()" [disabled]="gameWon || gameLost">Jump</button>
+        <button (click)="right()" [disabled]="gameWon || gameLost">Right</button>
     </p>
 
-    <p *ngIf="gameOver">🎉🏆 Victory! 🏆🎉</p>
+    <p *ngIf="gameWon">🎉🏆 Victory! 🏆🎉</p>
+    <p *ngIf="gameLost">🤮 Defeat! 🤮</p>
 
-    <!--
-    <p>
+    <!-- <p>
         Internal game state:
         <br/>
         player pos: {{playerX}}
         <br/>
         game over: {{gameOver}} 
-    </p>
-    -->
+    </p> -->
 </div>
