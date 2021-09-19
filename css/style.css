@@ -1,0 +1,136 @@
+html {
+    background-color: #002030;
+    font-family: "Rockwell";
+}
+
+body {
+    /* background-image: url(/res/background.jpg);
+    background-size: cover; */
+    margin: 0;
+    padding: 0;
+    color: #f2f2f2;
+}
+
+.portrait {
+    max-width: 200px;
+    border-radius: 50%;
+    /* margin-left: auto; */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+
+/* .main {
+    margin: auto;
+    width: 80vw;
+    background-color: #00000050;
+    display: flex;
+} */
+
+.topnav {
+    overflow: hidden;
+    border-bottom: solid 1px #FFFFFF80;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.topnav a:hover {
+    color: steelblue;
+}
+
+footer {
+    margin-top: 2em;
+}
+
+footer a {
+    color: #f2f2f2;
+    text-decoration: none;
+}
+
+#hero {
+    display: flex;
+    height: 500px;
+    background-image: url(/resource/background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+/* .topnav a.active {
+    text-decoration: underline;
+} */
+
+footer {
+    background-color: #404040A0;
+}
+
+
+/**/
+
+
+/**/
+
+
+/**/
+
+
+/**/
+
+
+/**/
+
+.slideshow-container {
+    height: 600px;
+    max-width: 900px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    position: absolute;
+    transition: 1s;
+}
+
+.slide img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
