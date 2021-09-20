@@ -1,13 +1,15 @@
 var slideIndex = 0;
+var slideTimer = setTimeout(plusSlides, 4000);
 
 window.onload = (_) => {
-    showSlides();
+    arrangeSlides();
 };
 
-// Next/previous controls
-function plusSlides(n) {
+function plusSlides(n = 1) {
     slideIndex += n;
-    showSlides();
+    arrangeSlides();
+    clearTimeout(slideTimer);
+    slideTimer = setTimeout(plusSlides, 4000);
 }
 
 // function loadSlides() {
@@ -41,7 +43,7 @@ function plusSlides(n) {
 //     slideContainer.appendChild(aNext);
 // }
 
-function showSlides() {
+function arrangeSlides() {
     let slides = document.getElementsByClassName("slide");
 
     if (slideIndex >= slides.length) {
