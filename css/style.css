@@ -4,12 +4,10 @@
 
 html {
     background-color: #002030;
-    font-family: "Rockwell";
+    font-family: "Gill Sans", sans-serif
 }
 
 body {
-    /* background-image: url(/res/background.jpg);
-    background-size: cover; */
     margin: 0;
     padding: 0;
     color: #f2f2f2;
@@ -141,15 +139,23 @@ footer {
 
 .project-item {
     margin: 8px;
-    width: calc(25% - 16px);
-    padding: 10px;
-    color: black;
+    width: calc(33% - 16px);
+    /* padding: 10px; */
     background-color: white;
+    position: relative;
+    overflow: hidden;
+    transition: ease 100ms;
 }
 
 .project-item img {
-    height: 80%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    transition: ease 300ms;
+}
+
+.project-item:hover img {
+    scale: 1.1;
 }
 
 @media screen and (max-width: 1600px) {
@@ -168,4 +174,46 @@ footer {
     .project-item {
         width: calc(100% - 16px);
     }
+}
+
+.overlay {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: ease-out 400ms;
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+}
+
+.project-item:hover>.overlay,
+.overlay:hover {
+    transform: translate3d(0, 0, 0);
+    opacity: 100%;
+}
+
+.over-overlay {
+    align-self: flex-end;
+    flex-grow: 1;
+    text-align: center;
+    padding: 1em;
+    margin: 2em;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.over-overlay span {
+    font-size: x-large;
+}
+
+a.button {
+    font-size: large;
+    text-decoration: none;
+    color: white;
+    border: solid 1px white;
+    padding: 2px 6px 2px 6px;
+    white-space: nowrap;
 }
