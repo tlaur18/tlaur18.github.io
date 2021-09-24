@@ -1,11 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     background-color: #002030;
-    font-family: "Rockwell";
+    font-family: "Gill Sans", sans-serif
 }
 
 body {
-    /* background-image: url(/res/background.jpg);
-    background-size: cover; */
     margin: 0;
     padding: 0;
     color: #f2f2f2;
@@ -76,19 +78,9 @@ footer {
 }
 
 
-/**/
-
-
-/**/
-
-
-/**/
-
-
-/**/
-
-
-/**/
+/**************************************
+**************Slideshow****************
+***************************************/
 
 .slideshow-container {
     height: 600px;
@@ -133,4 +125,107 @@ footer {
 .prev:hover,
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/**************************************
+**********Project Portfolio************
+***************************************/
+
+.outer-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project-item {
+    margin: 8px;
+    width: calc(33% - 16px);
+    /* padding: 10px; */
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: ease 500ms;
+    scale: 1.01;
+}
+
+.project-item:hover img,
+.project-item:focus img {
+    scale: 1.1;
+}
+
+@media screen and (max-width: 1600px) {
+    .project-item {
+        width: calc(33.33% - 16px);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .project-item {
+        width: calc(50% - 16px);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .project-item {
+        width: calc(100% - 16px);
+    }
+}
+
+.overlay {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: ease-out 400ms;
+    opacity: 0;
+}
+
+.project-item:hover>.overlay,
+.overlay:hover,
+.project-item:focus>.overlay,
+.overlay:focus {
+    transform: translate3d(0, 0, 0);
+    opacity: 100%;
+}
+
+.over-overlay {
+    text-align: center;
+    padding: 1em;
+    margin: -0.1em;
+    background-color: rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+}
+
+.over-overlay.bottom {
+    margin-top: auto;
+}
+
+.over-overlay.top span {
+    font-size: x-large;
+}
+
+.over-overlay.bottom span {
+    font-size: larger;
+}
+
+a.button {
+    font-size: larger;
+    text-decoration: none;
+    color: white;
+    border: solid 1px white;
+    padding: 2px 6px 2px 6px;
+    white-space: nowrap;
+}
+
+a.button~a.button {
+    margin-left: 10px;
 }
