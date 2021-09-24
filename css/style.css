@@ -144,17 +144,18 @@ footer {
     background-color: white;
     position: relative;
     overflow: hidden;
-    transition: ease 100ms;
 }
 
 .project-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: ease 300ms;
+    transition: ease 500ms;
+    scale: 1.01;
 }
 
-.project-item:hover img {
+.project-item:hover img,
+.project-item:focus img {
     scale: 1.1;
 }
 
@@ -178,42 +179,53 @@ footer {
 
 .overlay {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     transition: ease-out 400ms;
-    transform: translate3d(0, 100%, 0);
     opacity: 0;
 }
 
 .project-item:hover>.overlay,
-.overlay:hover {
+.overlay:hover,
+.project-item:focus>.overlay,
+.overlay:focus {
     transform: translate3d(0, 0, 0);
     opacity: 100%;
 }
 
 .over-overlay {
-    align-self: flex-end;
-    flex-grow: 1;
     text-align: center;
     padding: 1em;
-    margin: 2em;
+    margin: -0.1em;
     background-color: rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
 }
 
-.over-overlay span {
+.over-overlay.bottom {
+    margin-top: auto;
+}
+
+.over-overlay.top span {
     font-size: x-large;
 }
 
+.over-overlay.bottom span {
+    font-size: larger;
+}
+
 a.button {
-    font-size: large;
+    font-size: larger;
     text-decoration: none;
     color: white;
     border: solid 1px white;
     padding: 2px 6px 2px 6px;
     white-space: nowrap;
+}
+
+a.button~a.button {
+    margin-left: 10px;
 }
