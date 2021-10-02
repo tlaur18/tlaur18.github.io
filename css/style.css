@@ -4,7 +4,8 @@
 
 html {
     background-color: #002030;
-    font-family: "Gill Sans", sans-serif
+    font-family: "Gill Sans", sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -16,7 +17,6 @@ body {
 .portrait {
     max-width: 200px;
     border-radius: 50%;
-    /* margin-left: auto; */
 }
 
 .container {
@@ -24,17 +24,18 @@ body {
     margin: auto;
 }
 
-
-/* .main {
-    margin: auto;
-    width: 80vw;
-    background-color: #00000050;
-    display: flex;
-} */
-
 .topnav {
     overflow: hidden;
     border-bottom: solid 1px #FFFFFF80;
+    position: fixed;
+    top: 0;
+    width: inherit;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.topnav {
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .topnav a {
@@ -62,16 +63,13 @@ footer a {
 
 #hero {
     display: flex;
-    height: 500px;
-    background-image: url(/resource/background.jpg);
+    height: 60em;
+    background-image: url(/resource/cover\ narrow.jpg);
     background-size: cover;
     background-attachment: fixed;
+    background-position: center;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
 }
-
-
-/* .topnav a.active {
-    text-decoration: underline;
-} */
 
 footer {
     background-color: #404040A0;
